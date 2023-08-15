@@ -1,0 +1,14 @@
+{
+    "name":"icons",
+    "version":"1.0.0",
+    "scripts":{
+        "build":"npx postcss src/**/*.css --base src --dir dist && npx copyfiles -s -u 1 src/**/* dist"
+    },
+    "devDependencies":{
+        "autoprefixer":"^10.4.14",
+        "cssnano":"^6.0.1",
+        "postcss":"^8.4.27",
+        "postcss-cli":"^10.1.0",
+        "copyfiles":"^2.4.1"
+    }
+}
