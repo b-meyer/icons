@@ -2,7 +2,7 @@
     "name":"icons",
     "version":"1.0.0",
     "scripts":{
-        "build":"npx postcss src/**/*.css --base src --dir dist && npx copyfiles -s -u 1 src/**/* dist"
+        "build":"npx postcss ./src/**/*.css --base ./src --dir ./dist && npx copyfiles -s -u 1 ./src/**/* ./dist"
     },
     "devDependencies":{
         "autoprefixer":"^10.4.14",
