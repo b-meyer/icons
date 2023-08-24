@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "Material Design Icons";
-  src: url("./materialdesignicons-webfont.woff2?v=7.2.96") format("woff2"),
-  url("./materialdesignicons-webfont.woff?v=7.2.96") format("woff");
+  src: url("./materialdesignicons-webfont.woff2?v=7.2.96") format("woff2"), url("./materialdesignicons-webfont.woff?v=7.2.96") format("woff");
 }
 
 i[class^=md-], i[class*=" md-"] {
