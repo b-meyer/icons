@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '16.x'
         cache: 'npm'
@@ -25,17 +24,11 @@ jobs:
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
+    - uses: azure/CLI@v1
       with:
         inlineScript: |
           az storage blob delete-batch --account-name bmeyerpublic --auth-mode key -s icons
           az storage blob upload-batch --account-name bmeyerpublic --auth-mode key -d icons -s dist
-    - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az cdn endpoint purge --content-paths  "/*" --profile-name "bmeyerpublic" --name "bm-icons" --resource-group "webapps"
-    - name: logout
-      run: az logout
+          az cdn endpoint purge --content-paths  "/*" --profile-name "bmeyerpublic" --name "bm-icons" --resource-group "webapps"
+    - run: az logout
       if: always()
