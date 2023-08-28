@@ -28,7 +28,7 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
-        inlineScript: az storage blob upload-batch --account-name bmeyerpublic --auth-mode key -d icons -s /dist
+        inlineScript: az storage blob upload-batch --account-name bmeyerpublic --auth-mode key -d icons -s dist
   #  - name: Purge CDN endpoint
   #    uses: azure/CLI@v1
   #    with:
