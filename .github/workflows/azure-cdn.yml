@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: '16.x'
         cache: 'npm'
-    - name: node/CLI
+    - name: Run node/CLI
       run: |
         npm install
         npm run build --if-present
@@ -30,5 +30,6 @@ jobs:
           az storage blob delete-batch --account-name bmeyerpublic --auth-mode key -s icons
           az storage blob upload-batch --account-name bmeyerpublic --auth-mode key -d icons -s dist
           az cdn endpoint purge --content-paths  "/*" --profile-name "bmeyerpublic" --name "bm-icons" --resource-group "webapps"
-    - run: az logout
+    - name: Run azure/logut
+      run: az logout
       if: always()
